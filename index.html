@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="color-scheme" content="light">
+<meta charset="UTF-8" />
+<link rel="icon" href="C:/Users/LYH/Pictures/윈도우%20아이콘/favicon-16x16.png">
+<title>Dashboard</title>
+<style>
+    :root {
+        color-scheme: light;
+    }
+    body {
+        background: #121212;
+        color: #eee;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 30px;
+    }
+    .wrap {
+        max-width:1400px;
+        margin:20px auto;
+    }
+    h1 {
+        margin:0;
+        font-weight:600;
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: #fff;
+    }
+    .section {
+        margin-bottom: 30px;
+    }
+    .section-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #f0f0f0;
+    }
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+    .card {
+        width: 220px;
+        padding: 18px;
+        border-radius: 14px;
+        text-align: left;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s ease;
+        text-decoration: none;
+        color: #000;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        opacity: 0.9;
+    }
+    /* 임의 색상 */
+    .bg-record { background: #c7e6ff; }
+    .bg-record2 { background: #cec64eff; }
+    .bg-book { background: #78fa94ff; }
+    .bg-obsidian { background: #d5c7ff; }
+    .bg-english { background: #ffe5c7; }
+    .bg-japanese { background: #ffd3e0; }
+    .bg-AI { background: #ff769fff; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+    <header>
+        <div>
+            <h1>Dashboard</h1>
+        </div>
+    </header>
+
+    <div class="tomorrow"
+        data-location-id="065400"
+        data-language="KO"
+        data-unit-system="METRIC"
+        data-skin="light"
+        data-widget-type="upcoming"
+        style="padding-bottom:22px;position:relative;"
+    >
+        <a
+        href="https://weather.tomorrow.io/"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+        style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+        >
+        <img
+            alt="Powered by Tomorrow.io"
+            src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+            width="250"
+            height="18"
+        />
+        </a>
+    </div>
+
+
+<!-- 기록 -->
+<div class="section">
+    <div class="section-title">기록</div>
+    <div class="card-container">
+        <a class="card bg-record" href="https://docs.google.com/spreadsheets/d/1BHvOGUGq6kTGM2C3vyniRq7x2-m6IImsJA2eMroWYjo/edit?usp=sharing" target="_blank" rel="noopener noreferrer" >1. 생활 기록장</a>
+        <a class="card bg-record" href="https://docs.google.com/spreadsheets/d/1jLpvlcJ1pw3y7I2URP1ZB1O4TydapO26zNgEiawubFs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" >2. 학습 기록장</a>
+        <a class="card bg-record" href="https://docs.google.com/spreadsheets/d/1wJqrWswyvl7O9fYuOyLug-3w8YYf2Kb91KVj5l5KA5Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer" >3. 러닝 기록장</a>
+        <a class="card bg-record" href="https://docs.google.com/spreadsheets/d/1sh_zlm5kUXQazrew5CvCAtBIUVHWowJ9nfD0hoE5mdQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" >4. 운동 기록장</a>
+    </div>
+    <div class="card-container">
+        <a class="card bg-record" href="https://docs.google.com/spreadsheets/d/1H3AfyRam_8LVE0X-304xBvV0zAEJlG8aCrHEHdJLwOU/edit?usp=sharing" target="_blank" rel="noopener noreferrer" >5. 가계부</a>
+        <a class="card bg-record2" href="https://docs.google.com/spreadsheets/d/1Ny_gzM4ijvAPFFBLNMwYnHIRyfrZh5GEespbNyFzQNE/edit?usp=sharing" target="_blank" rel="noopener noreferrer" >[Life] 1만시간 프로젝트</a>
+    </div>
+</div>
+
+
+<!-- Book -->
+<div class="section">
+    <div class="section-title">Book</div>
+    <div class="card-container">
+        <a class="card bg-book" href="https://docs.google.com/spreadsheets/d/13ahsH5lsF_rkjbxdw9LPvdKgOFbOiQ3QL6Em6gpVYP0/edit?usp=sharing" target="_blank" rel="noopener noreferrer" >1. 독서 기록</a>
+        <a class="card bg-book" href="https://docs.google.com/spreadsheets/d/188paJ4ENdpwBnLYON5GKMazpIbzJ5PQaG9-oaLPcy_s/edit?usp=sharing" target="_blank" rel="noopener noreferrer" >2. 독서 계획</a>
+        <a class="card bg-book" href="https://docs.google.com/spreadsheets/d/1DeqUSDDUuy3OWfEV8lNdtAQVNHWxeeesUg4ah-GZBe4/edit?usp=sharing" target="_blank" rel="noopener noreferrer" >3. 필사 계획</a>
+    </div>
+</div>
+
+
+    <!-- Obsidian -->
+    <div class="section">
+        <div class="section-title">Obsidian</div>
+        <div class="card-container">
+            <a class="card bg-obsidian" href="obsidian://open?vault=MLRD%202.0">MLRD 2.0</a>
+            <a class="card bg-obsidian" href="obsidian://open?vault=필사">필사</a>
+            <a class="card bg-obsidian" href="obsidian://open?vault=2nd%20Brain">2nd Brain</a>
+            <a class="card bg-obsidian" href="obsidian://open?vault=Training">Training</a>
+        </div>
+    </div>
+
+    <!-- 영어 학습 -->
+    <div class="section">
+        <div class="section-title">영어 학습</div>
+        <div class="card-container">
+            <a class="card bg-english" href="https://www.bbc.co.uk/learningenglish/courses/lower_intermediate/home" target="_blank" rel="noopener noreferrer" >[매일]<br>Lower Intermediate Course</a>
+            <a class="card bg-english" href="https://www.bbc.co.uk/learningenglish/english/course/eiam/unit-2" target="_blank" rel="noopener noreferrer" >[매일]<br>English In A Minute</a>
+            <a class="card bg-english" href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" target="_blank" rel="noopener noreferrer" >[화, 금]<br>6 Minute English</a>
+            <a class="card bg-english" href="https://www.bbc.co.uk/learningenglish/english/features/real-easy-english" target="_blank" rel="noopener noreferrer" >[수, 토]<br>Real Easy English</a>
+        </div>
+    </div>
+
+    <!-- 일본어 학습 -->
+    <div class="section">
+        <div class="section-title">일본어 학습</div>
+        <div class="card-container">
+            <a class="card bg-japanese" href="https://ja.dict.naver.com/#/main" target="_blank" rel="noopener noreferrer" >네이버 일본어 사전</a>
+            <a class="card bg-japanese" href="https://nihongo.co.kr/" target="_blank" rel="noopener noreferrer" >매일일본어</a>
+            <a class="card bg-japanese" href="https://nihongokanji.com/" target="_blank" rel="noopener noreferrer" >일본어 한자 공부방</a>
+        </div>
+    </div>
+
+    <!-- AI -->
+    <div class="section">
+        <div class="section-title">AI</div>
+        <div class="card-container">
+            <a class="card bg-AI" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" >ChatGPT</a>
+            <a class="card bg-AI" href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer" >Google Gemini</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+ <script>
+    (function(d, s, id) {
+        if (d.getElementById(id)) {
+            if (window.__TOMORROW__) {
+                window.__TOMORROW__.renderWidget();
+            }
+            return;
+        }
+        const fjs = d.getElementsByTagName(s)[0];
+        const js = d.createElement(s);
+        js.id = id;
+        js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+        fjs.parentNode.insertBefore(js, fjs);
+    })(document, 'script', 'tomorrow-sdk');
+</script>
