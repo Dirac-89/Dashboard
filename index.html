@@ -122,9 +122,10 @@
     <div class="section-title">학습</div>
      <!-- 영어 학습 -->
     <div class="card-container">
-        <a class="card bg-english" href="javascript:void(0);" onclick="openEnglishToday()" rel="noopener noreferrer" >BBC English</a>
-        <a class="card bg-japanese" href="javascript:void(0);" onclick="openKanjiToday()" rel="noopener noreferrer" >일본어 한자 공부방</a>
-        <a class="card bg-japanese" href="https://ja.dict.naver.com/#/main" target="_blank" rel="noopener noreferrer" >네이버 일본어 사전</a>
+        <a class="card bg-english" href="javascript:void(0);" onclick="openEnglishToday()" rel="noopener noreferrer">BBC English</a>
+        <a class="card bg-japanese" href="javascript:void(0);" onclick="openEBSToday()" rel="noopener noreferrer">EBS 일본어</a>
+        <a class="card bg-japanese" href="javascript:void(0);" onclick="openKanjiToday()" rel="noopener noreferrer">일본어 한자 공부방</a>
+        <a class="card bg-japanese" href="https://ja.dict.naver.com/#/main" target="_blank" rel="noopener noreferrer">네이버 일본어 사전</a>
     </div>
     <details style="margin-top: 15px; color: #666;">
         <summary style="cursor: pointer; font-size: 0.9em; margin-bottom: 10px;">BBC 전체 보기</summary>
@@ -190,7 +191,7 @@
     })(document, 'script', 'tomorrow-sdk');
 
      // 요일별 링크 열기
-     function openEnglishToday() {
+function openEnglishToday() {
     const day = new Date().getDay(); // 0:일, 1:월, 2:화, 3:수, 4:목, 5:금, 6:토
     
     // 기본 매일 코스 (항상 열림)
@@ -222,7 +223,26 @@
     dailyLinks.forEach(url => window.open(url, '_blank'));
 }
 
-     function openKanjiToday() {
+
+function openEBSToday() {
+    const day = new Date().getDay(); // 0:일, 1:월, 2:화, 3:수, 4:목, 5:금, 6:토
+    
+    // 요일별 추가 코스
+     switch (day) {
+         case 1, 2, 3: //월, 화, 수요일
+            const url = "https://5dang.ebs.co.kr/auschool/sub/replay?prodId=235&courseId=BK0LJLK0000000002&stepId=01BK0LJLK0000000002&lectId=&situ=";  
+            break;
+         case 4, 5, 6: //목, 금, 토요일
+            const url = "https://5dang.ebs.co.kr/auschool/sub/replay?prodId=234&courseId=BK0LJLK0000000001&stepId=01BK0LJLK0000000001&lectId=&situ=";
+            break;
+         default:
+            break;
+     }
+    // 모든 해당 링크를 새 탭으로 오픈
+    window.open(url, '_blank');
+}
+
+ function openKanjiToday() {
     // 1. 기준 날짜 설정 (2026년 3월 22일)
     const startDate = new Date("2026-03-22");
     // 2. 오늘 날짜 설정 (시간을 00:00:00으로 맞춰서 일수 계산을 정확하게 함)
