@@ -226,20 +226,26 @@ function openEnglishToday() {
 
 function openEBSToday() {
     const day = new Date().getDay(); // 0:일, 1:월, 2:화, 3:수, 4:목, 5:금, 6:토
-    
+    let url = '';
     // 요일별 추가 코스
      switch (day) {
-         case 1, 2, 3: //월, 화, 수요일
-            const url = `https://5dang.ebs.co.kr/auschool/sub/replay?prodId=235&courseId=BK0LJLK0000000002&stepId=01BK0LJLK0000000002&lectId=&situ=`;  
+         case 1:
+         case 2:
+         case 3: //월, 화, 수요일
+            url = `https://5dang.ebs.co.kr/auschool/sub/replay?prodId=235&courseId=BK0LJLK0000000002&stepId=01BK0LJLK0000000002&lectId=&situ=`;  
             break;
-         case 4, 5, 6: //목, 금, 토요일
-            const url = `https://5dang.ebs.co.kr/auschool/sub/replay?prodId=234&courseId=BK0LJLK0000000001&stepId=01BK0LJLK0000000001&lectId=&situ=`;
+         case 4:
+         case 5:
+         case 6: //목, 금, 토요일
+            url = `https://5dang.ebs.co.kr/auschool/sub/replay?prodId=234&courseId=BK0LJLK0000000001&stepId=01BK0LJLK0000000001&lectId=&situ=`;
             break;
          default:
             break;
      }
     // 모든 해당 링크를 새 탭으로 오픈
-    window.open(url, '_blank');
+    if (url) {
+        window.open(url, '_blank');
+    }
 }
 
  function openKanjiToday() {
@@ -254,7 +260,7 @@ function openEBSToday() {
     const diffTime = today.getTime() - startDate.getTime();
     const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
-    // 4. 시작 번호 1073에 (경과 일수 * 5)를 더함
+    // 4. 시작 번호 1173에 (경과 일수 * 5)를 더함
     // 만약 오늘이 22일 이전이면 1073이 열리고, 이후면 5씩 증가함
     const baseNumber = 1173;
     const currentNumber = baseNumber + (diffDays > 0 ? diffDays * 5 : 0);
