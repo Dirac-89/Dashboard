@@ -226,26 +226,25 @@ function openEnglishToday() {
 
 function openEBSToday() {
     const day = new Date().getDay(); // 0:일, 1:월, 2:화, 3:수, 4:목, 5:금, 6:토
-    let url = '';
+    const dailyLinks = [];
     // 요일별 추가 코스
      switch (day) {
          case 1:
          case 2:
          case 3: //월, 화, 수요일
-            url = `https://5dang.ebs.co.kr/auschool/sub/replay?prodId=235&courseId=BK0LJLK0000000002&stepId=01BK0LJLK0000000002&lectId=&situ=`;  
+            dailyLinks.push("https://5dang.ebs.co.kr/auschool/sub/replay?prodId=235&courseId=BK0LJLK0000000002&stepId=01BK0LJLK0000000002&lectId=&situ=");
             break;
          case 4:
          case 5:
          case 6: //목, 금, 토요일
-            url = `https://5dang.ebs.co.kr/auschool/sub/replay?prodId=234&courseId=BK0LJLK0000000001&stepId=01BK0LJLK0000000001&lectId=&situ=`;
+            dailyLinks.push("https://5dang.ebs.co.kr/auschool/sub/replay?prodId=234&courseId=BK0LJLK0000000001&stepId=01BK0LJLK0000000001&lectId=&situ=");
+            dailyLinks.push("https://elibrary.kyobobook.co.kr/dig/elb/elibrary");
             break;
          default:
             break;
      }
     // 모든 해당 링크를 새 탭으로 오픈
-    if (url) {
-        window.open(url, '_blank');
-    }
+    dailyLinks.forEach(url => window.open(url, '_blank'));
 }
 
  function openKanjiToday() {
